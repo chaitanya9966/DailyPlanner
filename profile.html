@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Daily Planner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>📅 Daily Planner</h2>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html#timetable">
+                    📖 Timetable
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html#goals">
+                    🎯 Goals
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html#notes">
+                    📝 Notes
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="profile.html">
+                    👤 Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="logoutBtn">
+                    🚪 Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- ================= Main ================= -->
+
+    <main class="main-content">
+
+        <div class="page-title">
+
+            <h1>My Profile</h1>
+
+            <p>
+                View and manage your account information.
+            </p>
+
+        </div>
+
+
+        <!-- ================= User Card ================= -->
+
+        <section class="profile-card">
+
+            <div class="avatar">
+
+                <span id="avatarLetter">
+                    U
+                </span>
+
+            </div>
+
+            <div class="profile-info">
+
+                <h2 id="displayName">
+                    Loading...
+                </h2>
+
+                <p id="email">
+                    Loading...
+                </p>
+
+                <span class="verified" id="verificationStatus">
+                    Checking Verification...
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= Update Name ================= -->
+
+        <section class="card">
+
+            <h2>Update Display Name</h2>
+
+            <input
+                type="text"
+                id="newName"
+                placeholder="Enter new display name"
+            >
+
+            <button id="updateNameBtn">
+
+                Save Name
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= Change Password ================= -->
+
+        <section class="card">
+
+            <h2>Change Password</h2>
+
+            <input
+                type="password"
+                id="newPassword"
+                placeholder="New Password"
+            >
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+            >
+
+            <button id="changePasswordBtn">
+
+                Change Password
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= Account Info ================= -->
+
+        <section class="card">
+
+            <h2>Account Information</h2>
+
+            <table class="info-table">
+
+                <tr>
+
+                    <td>User ID</td>
+
+                    <td id="uid">
+                        Loading...
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Email Verified</td>
+
+                    <td id="verifiedText">
+                        Loading...
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Account Created</td>
+
+                    <td id="creationTime">
+                        Loading...
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Last Login</td>
+
+                    <td id="lastLogin">
+                        Loading...
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- ================= Danger Zone ================= -->
+
+        <section class="danger-card">
+
+            <h2>Danger Zone</h2>
+
+            <p>
+
+                Logout from your Daily Planner account.
+
+            </p>
+
+            <button id="logoutDanger">
+
+                Logout
+
+            </button>
+
+        </section>
+
+
+        <!-- ================= Footer ================= -->
+
+        <footer class="footer">
+
+            © 2026 Daily Planner | All Rights Reserved
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ================= Firebase ================= -->
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/auth.js"></script>
+
+<script type="module" src="js/profile.js"></script>
+
+</body>
+</html>

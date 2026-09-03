@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Planner Dashboard</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>📅 Daily Planner</h2>
+
+        </div>
+
+        <ul>
+
+<li onclick="scrollToSection('top')" class="active">
+🏠 Dashboard
+</li>
+
+<li onclick="scrollToSection('timetable')">
+📅 Timetable
+</li>
+
+<li onclick="scrollToSection('goals')">
+🎯 Goals & Notes
+</li>
+
+<li onclick="scrollToSection('calendarSection')">
+📆 Calendar
+</li>
+
+<li onclick="window.location='profile.html'">
+👤 Profile
+</li>
+
+<li onclick="logout()">
+🚪 Logout
+</li>
+
+</ul>
+
+    </aside>
+
+
+
+    <!-- Main -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Welcome 👋
+
+                </h1>
+
+                <p id="todayDate">
+
+                </p>
+
+            </div>
+
+            <div class="top-buttons">
+
+                <button id="themeBtn">
+
+                    🌙 Dark Mode
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Progress -->
+
+        <section class="progress-card">
+
+            <h2>
+
+                Today's Progress
+
+            </h2>
+
+            <div class="progress">
+
+                <div id="progressFill">
+
+                </div>
+
+            </div>
+
+            <span id="progressText">
+
+                0%
+
+            </span>
+
+        </section>
+
+
+
+        <!-- Today's Timetable -->
+
+        <section class="table-section" id="timetable">
+<div class="task-controls">
+
+    <input
+        type="text"
+        id="searchTask"
+        placeholder="🔍 Search task...">
+
+    <select id="filterTask">
+
+        <option value="all">All Tasks</option>
+
+        <option value="completed">Completed</option>
+
+        <option value="pending">Pending</option>
+
+    </select>
+
+</div>
+
+            <div class="section-header">
+
+                <h2>
+
+                    Today's Timetable
+
+                </h2>
+
+                <button id="addTaskBtn">
+
+                    + Add Task
+
+                </button>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Time</th>
+
+                    <th>Task</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="taskTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- ===========================
+             Weekly Planner
+        ============================ -->
+
+        <section class="weekly-section">
+
+            <h2>📅 Weekly Planner</h2>
+
+            <div class="week-grid">
+
+                <div class="day-card">
+                    <h3>Monday</h3>
+                    <ul id="mondayList"></ul>
+                </div>
+
+                <div class="day-card">
+                    <h3>Tuesday</h3>
+                    <ul id="tuesdayList"></ul>
+                </div>
+
+                <div class="day-card">
+                    <h3>Wednesday</h3>
+                    <ul id="wednesdayList"></ul>
+                </div>
+
+                <div class="day-card">
+                    <h3>Thursday</h3>
+                    <ul id="thursdayList"></ul>
+                </div>
+
+                <div class="day-card">
+                    <h3>Friday</h3>
+                    <ul id="fridayList"></ul>
+                </div>
+
+                <div class="day-card">
+                    <h3>Saturday</h3>
+                    <ul id="saturdayList"></ul>
+                </div>
+
+                <div class="day-card">
+                    <h3>Sunday</h3>
+                    <ul id="sundayList"></ul>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===========================
+             Goals + Notes
+        ============================ -->
+
+        <section class="bottom-grid" id="goals">
+
+            <div class="card">
+
+                <h2>🎯 Daily Goals</h2>
+
+                <textarea
+                    id="goalBox"
+                    placeholder="Write today's goals..."></textarea>
+
+                <button id="saveGoals">
+                    Save Goals
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <h2>📝 Notes</h2>
+
+                <textarea
+                    id="notesBox"
+                    placeholder="Write important notes..."></textarea>
+
+                <button id="saveNotes">
+                    Save Notes
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===========================
+             Statistics
+        ============================ -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <h2 id="totalTasks">
+
+                    0
+
+                </h2>
+
+                <p>Total Tasks</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="completedTasks">
+
+                    0
+
+                </h2>
+
+                <p>Completed</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="pendingTasks">
+
+                    0
+
+                </h2>
+
+                <p>Pending</p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===========================
+             Calendar
+        ============================ -->
+
+        <section class="calendar-card" id="calendarSection">
+
+            <h2>
+
+                📆 Calendar
+
+            </h2>
+
+            <div id="calendar">
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ===========================
+             Add Task Modal
+        ============================ -->
+
+        <!-- ===========================
+     Add Task Modal
+=========================== -->
+
+<div class="modal" id="taskModal">
+
+    <div class="modal-content">
+
+        <h2>Add New Task</h2>
+
+        <input
+            type="time"
+            id="taskTime">
+
+        <input
+            type="text"
+            id="taskName"
+            placeholder="Enter task">
+
+        <select id="taskDay">
+
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+
+        </select>
+
+        <input
+            type="date"
+            id="taskDate">
+
+        <select id="taskPriority">
+
+            <option value="High">🔴 High Priority</option>
+            <option value="Medium" selected>🟡 Medium Priority</option>
+            <option value="Low">🟢 Low Priority</option>
+
+        </select>
+
+        <div class="modal-buttons">
+
+            <button id="saveTask">
+                Save
+            </button>
+
+            <button id="closeModal">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+     Firebase
+=========================== -->
+
+<script type="module" src="js/firebase.js"></script>
+
+<!-- ===========================
+     Authentication
+=========================== -->
+
+<script type="module" src="js/auth.js"></script>
+
+<!-- ===========================
+     Dashboard Logic
+=========================== -->
+
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+
+</html>

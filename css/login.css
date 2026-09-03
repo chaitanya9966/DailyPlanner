@@ -1,0 +1,311 @@
+/* =========================
+   Google Font Reset
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#0f172a;
+}
+
+/* =========================
+   Background
+========================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#2563eb,#7c3aed,#06b6d4);
+    background-size:300% 300%;
+    animation:gradientMove 12s ease infinite;
+    z-index:-2;
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,255,255,.08);
+    border-radius:50%;
+    top:-150px;
+    right:-120px;
+    filter:blur(40px);
+}
+
+.background::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:rgba(255,255,255,.08);
+    border-radius:50%;
+    bottom:-140px;
+    left:-100px;
+    filter:blur(40px);
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* =========================
+   Login Container
+========================= */
+
+.login-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* =========================
+   Card
+========================= */
+
+.login-card{
+
+    width:420px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+    animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================
+   Logo
+========================= */
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo img{
+    width:80px;
+    margin-bottom:15px;
+}
+
+.logo h2{
+    color:#fff;
+    font-size:30px;
+    font-weight:600;
+}
+
+.logo p{
+    color:#f1f5f9;
+    margin-top:8px;
+    font-size:14px;
+}
+
+/* =========================
+   Form
+========================= */
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    color:#fff;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:rgba(255,255,255,.2);
+    color:#fff;
+    font-size:15px;
+}
+
+.input-group input::placeholder{
+    color:#e2e8f0;
+}
+
+/* =========================
+   Password
+========================= */
+
+.password-box{
+    position:relative;
+}
+
+.password-box input{
+    padding-right:45px;
+}
+
+#togglePassword{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* =========================
+   Options
+========================= */
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    color:white;
+    font-size:14px;
+}
+
+.options a{
+    color:white;
+    text-decoration:none;
+}
+
+.options a:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   Button
+========================= */
+
+.login-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+/* =========================
+   Register
+========================= */
+
+.register-text{
+
+    margin-top:22px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.register-text a{
+
+    color:#fde047;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.register-text a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width:500px){
+
+.login-card{
+
+width:100%;
+
+padding:30px 25px;
+
+}
+
+.logo h2{
+
+font-size:24px;
+
+}
+
+}

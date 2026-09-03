@@ -1,0 +1,675 @@
+/* ======================================
+   GOOGLE FONT & RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+    color:#1e293b;
+}
+
+/* ======================================
+   LAYOUT
+====================================== */
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ======================================
+   SIDEBAR
+====================================== */
+
+.sidebar{
+
+    width:260px;
+
+    background:#2563eb;
+
+    color:white;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    padding:30px 20px;
+
+    overflow-y:auto;
+
+}
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.logo h2{
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.menu{
+
+    list-style:none;
+
+}
+
+.menu li{
+
+    margin-bottom:15px;
+
+}
+
+.menu a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 16px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+.menu a:hover{
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.menu .active a{
+
+    background:white;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+}
+
+/* ======================================
+   MAIN CONTENT
+====================================== */
+
+.main-content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:40px;
+
+}
+
+/* ======================================
+   PAGE TITLE
+====================================== */
+
+.page-title{
+
+    margin-bottom:35px;
+
+}
+
+.page-title h1{
+
+    font-size:34px;
+
+    color:#1e293b;
+
+    margin-bottom:8px;
+
+}
+
+.page-title p{
+
+    color:#64748b;
+
+    font-size:16px;
+
+}
+
+/* ======================================
+   PROFILE CARD
+====================================== */
+
+.profile-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+/* ======================================
+   AVATAR
+====================================== */
+
+.avatar{
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    flex-shrink:0;
+
+}
+
+/* ======================================
+   PROFILE INFO
+====================================== */
+
+.profile-info{
+
+    flex:1;
+
+}
+
+.profile-info h2{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
+}
+
+.profile-info p{
+
+    color:#64748b;
+
+    margin-bottom:10px;
+
+    font-size:17px;
+
+}
+
+.verified{
+
+    display:inline-block;
+
+    padding:8px 14px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+/* ======================================
+   CARDS
+====================================== */
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    margin-bottom:20px;
+
+    color:#1e293b;
+
+    font-size:24px;
+
+}
+
+
+/* ======================================
+   INPUTS
+====================================== */
+
+.card input{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    margin-bottom:18px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.card input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 8px rgba(37,99,235,.15);
+
+}
+
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.card button,
+.danger-card button{
+
+    padding:14px 24px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.card button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ======================================
+   ACCOUNT INFO TABLE
+====================================== */
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.info-table tr{
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+.info-table td{
+
+    padding:16px 10px;
+
+    font-size:15px;
+
+}
+
+.info-table td:first-child{
+
+    font-weight:600;
+
+    width:220px;
+
+    color:#334155;
+
+}
+
+
+/* ======================================
+   DANGER ZONE
+====================================== */
+
+.danger-card{
+
+    background:#ffffff;
+
+    border:2px solid #ef4444;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.danger-card h2{
+
+    color:#dc2626;
+
+    margin-bottom:12px;
+
+}
+
+.danger-card p{
+
+    color:#64748b;
+
+    margin-bottom:20px;
+
+}
+
+.danger-card button{
+
+    background:#dc2626;
+
+}
+
+.danger-card button:hover{
+
+    background:#b91c1c;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ======================================
+   FOOTER
+====================================== */
+
+.footer{
+
+    text-align:center;
+
+    padding:25px 10px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+
+/* ======================================
+   DARK MODE
+====================================== */
+
+body.dark{
+
+    background:#0f172a;
+
+    color:#f8fafc;
+
+}
+
+body.dark .page-title h1{
+
+    color:#f8fafc;
+
+}
+
+body.dark .page-title p{
+
+    color:#cbd5e1;
+
+}
+
+body.dark .profile-card,
+body.dark .card,
+body.dark .danger-card{
+
+    background:#1e293b;
+
+    color:#f8fafc;
+
+}
+
+body.dark .card h2{
+
+    color:#f8fafc;
+
+}
+
+body.dark .profile-info p{
+
+    color:#cbd5e1;
+
+}
+
+body.dark .card input{
+
+    background:#334155;
+
+    color:#ffffff;
+
+    border:1px solid #475569;
+
+}
+
+body.dark .info-table td{
+
+    color:#f8fafc;
+
+}
+
+body.dark .info-table tr{
+
+    border-bottom:1px solid #475569;
+
+}
+
+body.dark .footer{
+
+    color:#cbd5e1;
+
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:220px;
+
+    }
+
+    .main-content{
+
+        margin-left:220px;
+
+        width:calc(100% - 220px);
+
+        padding:25px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .container{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+    .profile-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .avatar{
+
+        width:90px;
+
+        height:90px;
+
+        font-size:36px;
+
+    }
+
+    .info-table td{
+
+        display:block;
+
+        width:100%;
+
+        padding:10px 0;
+
+    }
+
+    .info-table tr{
+
+        display:block;
+
+        margin-bottom:12px;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .page-title h1{
+
+        font-size:28px;
+
+    }
+
+    .card,
+    .profile-card,
+    .danger-card{
+
+        padding:20px;
+
+    }
+
+    .card button,
+    .danger-card button{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* ======================================
+   SCROLLBAR
+====================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e2e8f0;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
